@@ -1,0 +1,125 @@
+.App {
+    padding: 20px;
+}
+
+.App-header {
+    text-align: center;
+    h1 {
+        color: white;
+    }
+}
+
+.flex {
+    display: flex;
+    &-space-between {
+        justify-content: space-between;
+    }
+    &-center {
+        justify-content: center;
+    }
+}
+
+.todo-form {
+    input {
+        height: 30px;
+        border: none;
+        border-radius: 4px;
+        padding: 0 10px;
+        &:focus {
+            outline: none;
+        }
+    }
+    .add-btn {
+        background-color: white;
+        border: none;
+        border-top-right-radius: 4px;
+        border-bottom-right-radius: 4px;
+        position: relative;
+        text-align: center;
+        font-weight: bold;
+        cursor: pointer;
+        right: 5px;
+        width: 30px;
+        font-size: 18px;
+        &:hover {
+            background-color: rgb(255, 165, 81);
+            color: white;
+            transition: 0.2s;
+        }
+    }
+}
+.todo-list {
+    margin: 0 auto;
+    margin-top: 40px;
+    padding: 0;
+    list-style: none;
+    max-width: 768px;
+    li {
+        &.checked {
+            .description {
+                opacity: 0.5;
+                text-decoration: line-through;
+            }
+            button {
+                &.check {
+                    opacity: 0.5;
+                    pointer-events: none;
+                }
+            }
+        }
+        .description {
+            background-color: white;
+            font-size: 18px;
+            border-top-left-radius: 4px;
+            border-bottom-left-radius: 4px;
+            padding: 10px;
+            width: 100%;
+        }
+        
+        &:not(:last-child) {
+            margin-bottom: 10px;
+        }
+        button {
+            border: none;
+            position: relative;
+            &:hover {
+                cursor: pointer;
+            }
+            &.check {
+                background-color: rgb(128, 255, 128);
+                &:hover {
+                    background-color: rgb(52, 248, 52);
+                    transition: 0.2s;
+                }
+            }
+            
+            &.trash {
+                background-color: indianred;
+                &:hover {
+                    background-color: rgb(250, 29, 29);
+                    transition: 0.2s;
+                }
+            }
+            img {
+                height: 30px;
+                width: 30px;
+            }
+        }
+        
+    }
+}
+
+.delete-animation {
+    position: relative;
+    animation-name: delete;
+    animation-duration: 0.6s;
+
+}
+
+@keyframes delete {
+    0% {transform: rotate(5deg); bottom: 10px;}
+    25% {transform: rotate(-5deg); bottom: 20px; opacity: 0.7;}
+    50% {transform: rotate(-5deg); bottom: 0px; opacity: 0.5;}
+    75% {transform: rotate(-5deg); bottom: -10px; opacity: 0.2;}
+    100% {transform: rotate(5deg); bottom: -20px; opacity: 0;}
+}
