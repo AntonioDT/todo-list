@@ -40,6 +40,7 @@
         cursor: pointer;
         right: 5px;
         width: 30px;
+        height: 30px;
         font-size: 18px;
         &:hover {
             background-color: rgb(255, 165, 81);
@@ -82,6 +83,7 @@
         button {
             border: none;
             position: relative;
+            height: 40px;
             &:hover {
                 cursor: pointer;
             }
